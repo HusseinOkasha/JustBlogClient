@@ -24,18 +24,22 @@ function LoginPage(props) {
       body: JSON.stringify(queryString),
       headers: { "Content-type": "application/json" },
     };
-    let response = await sendRequest(options);
-    let token, userID;
+    try {
+      let response = await sendRequest(options);
+      let token, userID;
 
-    if (!response.ok) {
-      setLoginFailedState(true);
-    } else {
-      response = await response.json();
+      if (!response.ok) {
+        setLoginFailedState(true);
+      } else {
+        response = await response.json();
 
-      token = response.data.login.token;
-      //userID = response.data.login.userId;
-      localStorage.setItem("token", token);
-      setAuthenticated(true);
+        token = response.data.login.token;
+        //userID = response.data.login.userId;
+        localStorage.setItem("token", token);
+        setAuthenticated(true);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 

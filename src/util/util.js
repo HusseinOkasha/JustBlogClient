@@ -95,7 +95,10 @@ export const sendRequest = async function (options) {
     },
   };
 
-  let response = await fetch("http://127.0.0.1:8000/graphql", updatedOptions);
+  let response = await fetch(
+    "https://just-blog1.herokuapp.com/graphql",
+    updatedOptions
+  );
   clearTimeout(timeoutID);
   return response;
 };
