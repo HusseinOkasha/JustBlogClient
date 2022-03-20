@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import "./SignupForm.css";
 
 function SignupForm(props) {
   // Refs :
@@ -50,9 +49,13 @@ function SignupForm(props) {
   // ------------------------------------------------------------------------------------------
 
   return (
-    <div className="signupStyle">
+    <div className="formStyle">
+      <center>
+        <h1>Signup</h1>
+      </center>
       {props.feedback.successedMessage}
       {props.feedback.failedMessage}
+
       <Form onSubmit={onSubmitHandler}>
         <Form.Group className="mb-3" controlId="firstName">
           <Form.Label>First Name</Form.Label>
@@ -108,7 +111,9 @@ function SignupForm(props) {
           />
           {props.feedback.confirmPassword}
         </Form.Group>
-        <Button type="submit">Signup</Button>
+        <Button variant="dark" type="submit">
+          Signup
+        </Button>
       </Form>
     </div>
   );

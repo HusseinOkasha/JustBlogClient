@@ -13,21 +13,26 @@ const NewPost = (props) => {
   };
 
   return (
-    <div className="signupStyle">
+    <div className="formStyle">
+      <center>
+        <h2>New Post</h2>
+      </center>
       {props.feedback.success}
       {props.feedback.failure}
       <Form onSubmit={onSubmitHandler}>
         <Form.Group className="mb-3" controlId="new-post">
-          <Form.Label>Body</Form.Label>
           <Form.Control
             type="text"
             as="textarea"
             placeholder="Just write!"
             ref={bodyRef}
+            size="lg"
           />
         </Form.Group>
 
-        <Button type="submit">Post</Button>
+        <Button variant="dark" type="submit">
+          Post
+        </Button>
       </Form>
     </div>
   );

@@ -18,7 +18,10 @@ function LoginForm(props) {
   };
 
   return (
-    <div className="signupStyle">
+    <div className="formStyle">
+      <center>
+        <h2>Login</h2>
+      </center>
       {props.feedback}
       <Form onSubmit={onSubmitHandler}>
         <Form.Group className="mb-3" controlId="email">
@@ -34,7 +37,9 @@ function LoginForm(props) {
             ref={passwordRef}
           />
         </Form.Group>
-        <Button type="submit">Login</Button>
+        <Button variant="dark" type="submit">
+          Login
+        </Button>
       </Form>
     </div>
   );
