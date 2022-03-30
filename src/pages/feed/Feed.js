@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Post from "../../components/post/Post";
+import Navbar from "../../components/navbar/NavBar";
 
 import { sendRequest } from "../../util/util";
 
@@ -40,6 +41,7 @@ const FeedPage = function (props) {
   useEffect(() => getPosts(), []);
   return (
     <div>
+      <Navbar new_post={true} logout={true} />
       {state.posts?.map((post, idx) => (
         <Post key={idx}>{post.body}</Post>
       ))}

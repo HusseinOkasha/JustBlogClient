@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import NewPostForm from "../../components/newPost/NewPostForm";
+import Navbar from "../../components/navbar/NavBar";
 import { sendRequest } from "../../util/util";
 const NewPostPage = (props) => {
   // States
@@ -44,6 +45,7 @@ const NewPostPage = (props) => {
   };
   return (
     <div>
+      <Navbar logout={true} home={true} />
       <NewPostForm newPostHandler={newPostHandler} feedback={feedback} />
     </div>
   );

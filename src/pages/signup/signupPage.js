@@ -4,6 +4,7 @@ import { Alert, Form } from "react-bootstrap";
 import SignupForm from "../../components/signupForm/SignupForm";
 import { sendRequest } from "../../util/util";
 import { isValidEmail, isValidPassword } from "../../util/util";
+import Navbar from "../../components/navbar/NavBar";
 
 function SignupPage(props) {
   // States :
@@ -166,6 +167,7 @@ function SignupPage(props) {
 
   return (
     <div>
+      <Navbar login={true} />
       <SignupForm
         signupHandler={signupHandler}
         onChangeHandlers={onChangeHandlers}

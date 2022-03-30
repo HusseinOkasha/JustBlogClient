@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import LoginForm from "../../components/loginForm/LoginForm";
+import Navbar from "../../components/navbar/NavBar";
 import { sendRequest } from "../../util/util";
 function LoginPage(props) {
   // States
@@ -49,10 +50,13 @@ function LoginPage(props) {
 
   let navigate = authenticated ? <Navigate exact to="/" /> : null;
   return (
-    <div className="signupStyle">
-      {navigate}
-      <LoginForm loginHandler={loginHandler} feedback={loginFailedMessage} />
-    </div>
+    <>
+      <Navbar signup={true} />
+      <div className="signupStyle">
+        {navigate}
+        <LoginForm loginHandler={loginHandler} feedback={loginFailedMessage} />
+      </div>
+    </>
   );
 }
 export default LoginPage;
